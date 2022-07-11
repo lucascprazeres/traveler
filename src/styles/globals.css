@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFF;
+  --background: #F5F8FA;
+
+  --blue-brand: #115D8C;
+  --orange-brand: #F25D27;
+
+  --text-body: #617480;
+  --text-title: #123952;
+  --text-complement: #A0ACB2;
+
+  --shape: #DCE2E5;
+
+  --red: #DE3838;
+  --blue: #51B853;
+  --blue-low: #DDE9F0;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, select, button {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
