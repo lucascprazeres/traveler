@@ -48,29 +48,29 @@ const Home: NextPage = () => {
               />
 
               <Card
-                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
-                city='Belém'
-                locations={30}
+                imageUrl='https://santarem.pa.gov.br/storage/posts/May2021/YnsSnMKhsDrQ97O1KJTczK0ImHT3j1ewK30SbVSZ.jpg'
+                city='Santarém'
+                locations={15}
               />
 
               <Card
-                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
-                city='Belém'
+                imageUrl='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/09/3c/4b/castanhal.jpg?w=700&h=500&s=1'
+                city='Castanhal'
                 locations={30}
               />
             </div>
 
             <div className={styles.col}>
               <Card
-                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
-                city='Belém'
-                locations={30}
+                imageUrl='https://www.oliberal.com/image/contentid/policy:1.283817:1650632793/Braganca.jpeg?f=3x2&$p$f=0597639'
+                city='Bragança'
+                locations={25}
               />
 
               <Card
-                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
-                city='Belém'
-                locations={30}
+                imageUrl='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/fd/e2/ff/visao-aerea-da-ilha-onde.jpg?w=600&h=400&s=1'
+                city='São Caetano de Odivelas'
+                locations={11}
               />
             </div>
           </section>
