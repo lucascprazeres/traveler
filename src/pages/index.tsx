@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Card } from '../components/Card'
 import { Logo } from '../components/Logo'
 import styles from '../styles/Home.module.css'
 
@@ -21,7 +22,9 @@ const Home: NextPage = () => {
         <main>
           <section className={styles.hero}>
             <h1>
-              Viva uma grande aventura
+              Viva uma <br />
+              grande <br />
+              aventura
             </h1>
 
             <p>
@@ -36,7 +39,41 @@ const Home: NextPage = () => {
             </Link>
           </section>
 
-          <section className={styles.places}></section>
+          <section className={styles.places}>
+            <div className={styles.col}>
+              <Card
+                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
+                city='Belém'
+                locations={30}
+              />
+
+              <Card
+                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
+                city='Belém'
+                locations={30}
+              />
+
+              <Card
+                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
+                city='Belém'
+                locations={30}
+              />
+            </div>
+
+            <div className={styles.col}>
+              <Card
+                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
+                city='Belém'
+                locations={30}
+              />
+
+              <Card
+                imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
+                city='Belém'
+                locations={30}
+              />
+            </div>
+          </section>
         </main>
       </div>
     </div>

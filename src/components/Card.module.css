@@ -1,0 +1,24 @@
+.card {
+  height: 316px;
+  width: 304px;
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card footer {
+  background: var(--white);
+  height: 106px;
+  padding: 1.5rem;
+}
+
+.card footer span {
+  font-size: 1.375rem;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  color: var(--text-title);
+}
