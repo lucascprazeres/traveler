@@ -1,3 +1,31 @@
 .container {
-  
+  flex: 1;
+}
+
+.container main {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  space-between: space-between;
+  margin-bottom: 2rem;
+}
+
+.heading h1 {
+  font-size: 2.25rem;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
 }
