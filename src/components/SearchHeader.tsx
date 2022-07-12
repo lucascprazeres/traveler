@@ -1,6 +1,6 @@
 import { FiSearch } from 'react-icons/fi'
 import { Logo } from "./Logo";
-import RestrictedAccess from "./RestrictedAccess";
+import { RestrictedAccess } from "./RestrictedAccess";
 
 import styles from './SearchHeader.module.css'
 
