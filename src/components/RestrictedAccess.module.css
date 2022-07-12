@@ -3,6 +3,12 @@
   font-weight: 500;
   color: var(--blue-brand);
   background: var(--blue-low);
-  padding: 1rem 2rem;
   border-radius: 10px;
+
+  height: 3rem;
+  width: 10.875rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

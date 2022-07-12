@@ -1,3 +1,4 @@
+import { FiSearch } from 'react-icons/fi'
 import { Logo } from "./Logo";
 import RestrictedAccess from "./RestrictedAccess";
 
@@ -9,8 +10,9 @@ export function SearchHeader() {
       <div className={styles.content}>
         <Logo />
 
-        <div>
-          <input type="text" />
+        <div className={styles.inputContainer}>
+          <FiSearch size={18}/>
+          <input type="text" placeholder="Qual cidade você procura?"/>
         </div>
 
         <RestrictedAccess />

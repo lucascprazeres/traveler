@@ -15,3 +15,26 @@
 
   margin: 0 auto;
 }
+
+.inputContainer {
+  padding: 1rem;
+
+  background: var(--background);
+  border-radius: 10px;
+  border: 2px solid var(--shape);
+  
+  height: 3rem;
+  width: 26rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.inputContainer input {
+  outline: 0;
+  height: 3rem;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  margin-left: 0.5rem;
+}
