@@ -18,7 +18,9 @@ interface CitiesListingProps {
 
 export default function CitiesListing({ cities }: CitiesListingProps) {
   const [search, setSearch] = useState('')
-  const [filteredCityIds, setFilteredCityIds] = useState<number[]>([])
+  const [filteredCityIds, setFilteredCityIds] = useState<number[]>(() => {
+    return cities.map(city => city.id)
+  })
 
   useEffect(handleChangeSearch, [search])
 
@@ -53,32 +55,44 @@ export default function CitiesListing({ cities }: CitiesListingProps) {
               placeholder="Qual cidade você procura?"
               value={search}
               onChange={event => setSearch(event.target.value)}
-              />
+            />
           </div>
 
           <RestrictedAccess />
         </div>
       </header>
 
-      <main>
-        <div className={styles.heading}>
-          <h1>Selecione uma cidade</h1>
+      <div className={styles.content}>
+        {filteredCityIds.length > 0
+          ? (
+            <main>
+              <div className={styles.heading}>
+                <h1>Selecione uma cidade</h1>
 
-          <span></span>
-        </div>
+                <span></span>
+              </div>
 
-        <section className={styles.cards}>
-          {cities.map(city => (
-            <Card
-              key={city.id}
-              city={city.name}
-              imageUrl={city.imageUrl}
-              locations={city.locations}
-              disabled={!filteredCityIds.includes(city.id)}
-            />
-          ))}
-        </section>
-      </main>
+              <section className={styles.cards}>
+                {cities.map(city => (
+                  <Card
+                    key={city.id}
+                    city={city.name}
+                    imageUrl={city.imageUrl}
+                    locations={city.locations}
+                    disabled={!filteredCityIds.includes(city.id)}
+                  />
+                ))}
+              </section>
+            </main>
+          )
+          : (
+            <div className={styles.fallback}>
+              <img src="/sad-emoji.svg" alt="" />
+              <p>Sem resultados.</p>
+              <p>Tente outra busca</p>
+            </div>
+          )}
+      </div>
     </div>
   )
 }

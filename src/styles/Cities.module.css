@@ -1,12 +1,19 @@
 .container {
   flex: 1;
+  height: 100vh;
 }
 
-.container main {
+.content {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   margin-top: 2rem;
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -71,10 +78,27 @@
   gap: 2rem;
 }
 
-.cards > div {
+.cards > article {
   transition: transform 0.2s;
 }
 
-.cards > div:hover {
+.cards > article:hover {
   transform: translateY(-10px);
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fallback img {
+  margin-bottom: 2rem;
+}
+
+.fallback p {
+  font-size: 1.5rem;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 500;
 }

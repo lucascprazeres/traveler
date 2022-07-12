@@ -9,7 +9,7 @@ interface CardProps {
 
 export function Card({ imageUrl, city, locations, disabled }: CardProps) {
   return (
-    <div className={styles.card} style={{ opacity: disabled ? 0.3 : 1 }}>
+    <article className={styles.card} style={{ opacity: disabled ? 0.3 : 1 }}>
       <img
         src={imageUrl}
         alt={city}
@@ -18,6 +18,6 @@ export function Card({ imageUrl, city, locations, disabled }: CardProps) {
         <span>{city}</span>
         <p>{locations} locais</p>
       </footer>
-    </div>
+    </article>
   )
 }
