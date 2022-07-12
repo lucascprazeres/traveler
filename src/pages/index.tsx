@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Card } from '../components/Card'
 import { Logo } from '../components/Logo'
+import RestrictedAccess from '../components/RestrictedAccess'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -16,7 +17,7 @@ const Home: NextPage = () => {
         <header>
           <Logo />
 
-          <span />
+          <RestrictedAccess />
         </header>
 
         <main>
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
               visitar em cidades maravilhosas do <br /> Pará.
             </p>
 
-            <Link href="#">
+            <Link href="/cities">
               <a>
                 Descobrir todos os lugares
               </a>

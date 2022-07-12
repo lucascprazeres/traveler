@@ -1,0 +1,17 @@
+.header {
+  height: 6rem;
+  background: var(--white);
+  border-bottom: 2px solid var(--shape);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 100%;
+  max-width: 1120px;
+
+  margin: 0 auto;
+}

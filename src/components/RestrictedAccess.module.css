@@ -1,0 +1,8 @@
+.container {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 500;
+  color: var(--blue-brand);
+  background: var(--blue-low);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
