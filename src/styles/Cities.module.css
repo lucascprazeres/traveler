@@ -48,6 +48,10 @@
   align-items: center;
 }
 
+.inputContainer svg:last-child {
+  cursor: pointer;
+}
+
 .inputContainer input {
   outline: 0;
   height: 3rem;

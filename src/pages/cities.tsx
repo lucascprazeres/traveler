@@ -8,7 +8,7 @@ import styles from '../styles/Cities.module.css'
 
 import citiesJSON from '../../cities.json'
 import { City } from '.'
-import { FiSearch } from 'react-icons/fi'
+import { FiSearch, FiX } from 'react-icons/fi'
 import { Logo } from '../components/Logo'
 import { RestrictedAccess } from '../components/RestrictedAccess'
 
@@ -38,6 +38,10 @@ export default function CitiesListing({ cities }: CitiesListingProps) {
     return cityNameLowered.startsWith(searchTermLowered)
   }
 
+  function handleClearSearch() {
+    setSearch('')
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -49,13 +53,14 @@ export default function CitiesListing({ cities }: CitiesListingProps) {
           <Logo />
 
           <div className={styles.inputContainer}>
-            <FiSearch size={18} />
+            <FiSearch size={18} color={search ? '#F25D27' : '#617480'}/>
             <input
               type="text"
               placeholder="Qual cidade você procura?"
               value={search}
               onChange={event => setSearch(event.target.value)}
             />
+            {search && <FiX size={18} onClick={handleClearSearch}/>}
           </div>
 
           <RestrictedAccess />
