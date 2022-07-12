@@ -4,11 +4,12 @@ interface CardProps {
   imageUrl: string;
   city: string;
   locations: number;
+  disabled?: boolean;
 }
 
-export function Card({ imageUrl, city, locations }: CardProps) {
+export function Card({ imageUrl, city, locations, disabled }: CardProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{ opacity: disabled ? 0.3 : 1 }}>
       <img
         src={imageUrl}
         alt={city}

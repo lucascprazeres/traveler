@@ -10,7 +10,7 @@ import styles from '../styles/Home.module.css'
 
 import citiesJSON from '../../cities.json';
 
-interface City {
+export interface City {
   id: number;
   name: string;
   imageUrl: string;

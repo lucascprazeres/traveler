@@ -1,17 +1,64 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
+
 import { Card } from '../components/Card'
-import { SearchHeader } from '../components/SearchHeader'
 
 import styles from '../styles/Cities.module.css'
 
-export default function Cities() {
+import citiesJSON from '../../cities.json'
+import { City } from '.'
+import { FiSearch } from 'react-icons/fi'
+import { Logo } from '../components/Logo'
+import { RestrictedAccess } from '../components/RestrictedAccess'
+
+interface CitiesListingProps {
+  cities: City[];
+}
+
+export default function CitiesListing({ cities }: CitiesListingProps) {
+  const [search, setSearch] = useState('')
+  const [filteredCityIds, setFilteredCityIds] = useState<number[]>([])
+
+  useEffect(handleChangeSearch, [search])
+
+  function handleChangeSearch() {
+    const filteredCities = cities.filter(filterCitiesBySeachTerm)
+    const filteredIds = filteredCities.map(city => city.id)
+
+    setFilteredCityIds(filteredIds)
+  }
+
+  function filterCitiesBySeachTerm({ name }: City) {
+    const cityNameLowered = name.toLowerCase()
+    const searchTermLowered = search.toLowerCase()
+
+    return cityNameLowered.startsWith(searchTermLowered)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
         <title>traveler | cities</title>
       </Head>
 
-      <SearchHeader />
+      <header className={styles.header}>
+        <div className={styles.headerContent}>
+          <Logo />
+
+          <div className={styles.inputContainer}>
+            <FiSearch size={18} />
+            <input
+              type="text"
+              placeholder="Qual cidade você procura?"
+              value={search}
+              onChange={event => setSearch(event.target.value)}
+              />
+          </div>
+
+          <RestrictedAccess />
+        </div>
+      </header>
 
       <main>
         <div className={styles.heading}>
@@ -21,55 +68,26 @@ export default function Cities() {
         </div>
 
         <section className={styles.cards}>
-          <Card
-            imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
-            city='Belém'
-            locations={30}
-          />
-
-          <Card
-            imageUrl='https://santarem.pa.gov.br/storage/posts/May2021/YnsSnMKhsDrQ97O1KJTczK0ImHT3j1ewK30SbVSZ.jpg'
-            city='Santarém'
-            locations={15}
-          />
-
-          <Card
-            imageUrl='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/09/3c/4b/castanhal.jpg?w=700&h=500&s=1'
-            city='Castanhal'
-            locations={30}
-          />
-
-          <Card
-            imageUrl='https://viagemeturismo.abril.com.br/wp-content/uploads/2016/01/estaccca7acc83o-das-docas-de-belecc81m-do-paracc81.jpg'
-            city='Belém'
-            locations={30}
-          />
-
-          <Card
-            imageUrl='https://santarem.pa.gov.br/storage/posts/May2021/YnsSnMKhsDrQ97O1KJTczK0ImHT3j1ewK30SbVSZ.jpg'
-            city='Santarém'
-            locations={15}
-          />
-
-          <Card
-            imageUrl='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/09/3c/4b/castanhal.jpg?w=700&h=500&s=1'
-            city='Castanhal'
-            locations={30}
-          />
-
-          <Card
-            imageUrl='https://santarem.pa.gov.br/storage/posts/May2021/YnsSnMKhsDrQ97O1KJTczK0ImHT3j1ewK30SbVSZ.jpg'
-            city='Santarém'
-            locations={15}
-          />
-
-          <Card
-            imageUrl='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/09/3c/4b/castanhal.jpg?w=700&h=500&s=1'
-            city='Castanhal'
-            locations={30}
-          />
+          {cities.map(city => (
+            <Card
+              key={city.id}
+              city={city.name}
+              imageUrl={city.imageUrl}
+              locations={city.locations}
+              disabled={!filteredCityIds.includes(city.id)}
+            />
+          ))}
         </section>
       </main>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      cities: citiesJSON
+    },
+    revalidate: 60 * 60 * 24 // 24 hours
+  }
 }
