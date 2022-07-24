@@ -1,4 +1,4 @@
-import { FiCalendar, FiCamera, FiCoffee } from 'react-icons/fi'
+import { FiAlertCircle, FiCalendar, FiCamera, FiCoffee } from 'react-icons/fi'
 import { Header } from '../../components/Header'
 import styles from '../../styles/City.module.css'
 
@@ -23,7 +23,7 @@ export default function City() {
           <article className={styles.summary}>
             <div className={styles.card}>
               <header>
-                <FiCamera size={40} color="#F25D27"/>
+                <FiCamera size={40} color="#F25D27" />
               </header>
 
               <footer>
@@ -31,31 +31,52 @@ export default function City() {
                 <span>Pontos Turísticos</span>
               </footer>
             </div>
-          <div>
-            <div className={styles.card}>
-              <header>
-                <FiCoffee size={40} color="#F25D27"/>
-              </header>
+            <div>
+              <div className={styles.card}>
+                <header>
+                  <FiCoffee size={40} color="#F25D27" />
+                </header>
 
-              <footer>
-                <strong>20</strong>
-                <span>Comida e bebida</span>
-              </footer>
+                <footer>
+                  <strong>20</strong>
+                  <span>Comida e bebida</span>
+                </footer>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <div className={styles.card}>
-              <header>
-                <FiCalendar size={40} color="#F25D27"/>
-              </header>
+            <div>
+              <div className={styles.card}>
+                <header>
+                  <FiCalendar size={40} color="#F25D27" />
+                </header>
 
-              <footer>
-                <strong>11</strong>
-                <span>Eventos organizados</span>
-              </footer>
+                <footer>
+                  <strong>11</strong>
+                  <span>Eventos organizados</span>
+                </footer>
+              </div>
             </div>
-          </div>
+          </article>
+        </section>
+
+        <section className={styles.topRatings}>
+          <h2>Top avaliados</h2>
+          <ul>
+            
+          </ul>
+
+          <article className={styles.cityHighlight}>
+            <div className={styles.highlightDescription}>
+              <span>
+                <FiAlertCircle size={16} color="#fff"/>
+                Destaque
+              </span>
+              <h3>Ver o Peso</h3>
+              <p>Uma parte do paraíso na terra. Frequentemente com águas
+                claras em tons verdes e azuis. Um dos locais mais preferidos
+                por turistas e viajantes.</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Ver-oPeso-Belem.jpg" alt="" />
           </article>
         </section>
       </main>

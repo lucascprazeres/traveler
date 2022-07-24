@@ -18,6 +18,7 @@
 .overview {
   display: flex;
   align-items: center;
+  margin-bottom: 7.5rem;
 }
 
 .overview article {
@@ -87,4 +88,62 @@
   font-family: 'Heebo', sans-serif;
   font-size: 1rem;
   line-height: 1.375rem;
+}
+
+.topRatings {
+  margin-bottom: 5rem;
+}
+
+.topRatings h2 {
+  font-family: 'Barlow', sans-sefif;
+  font-size: 2.25rem; 
+  font-weight: 600;
+  color: var(--text-title);
+  margin-bottom: 2rem;
+}
+
+.cityHighlight {
+  display: flex;
+  align-items: center;
+  height: 17.875rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.highlightDescription {
+  background: var(--white);
+  height: 100%;
+  padding: 2.875rem 4rem;
+}
+
+.highlightDescription span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: var(--orange-brand);
+  color: var(--white);
+  height: 2rem;
+  width: 7.5rem;
+  border-radius: 100px;
+  margin-bottom: 2rem;
+}
+
+.highlightDescription h3 {
+  font-family: 'Barlow', sans-sefif;
+  font-size: 2.25rem; 
+  font-weight: 600;
+  color: var(--text-title);
+  margin-bottom: 1rem;
+}
+
+.highlightDescription p {
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
+
+.cityHighlight img {
+  width: 50%;
+  resize: cover;
 }
