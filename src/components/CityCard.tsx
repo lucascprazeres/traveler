@@ -1,4 +1,4 @@
-import styles from './Card.module.css'
+import styles from './CityCard.module.css'
 
 interface CardProps {
   imageUrl: string;
@@ -7,7 +7,7 @@ interface CardProps {
   disabled?: boolean;
 }
 
-export function Card({ imageUrl, city, locations, disabled }: CardProps) {
+export function CityCard({ imageUrl, city, locations, disabled }: CardProps) {
   return (
     <article className={styles.card} style={{ opacity: disabled ? 0.3 : 1 }}>
       <img

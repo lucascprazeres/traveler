@@ -82,11 +82,12 @@
   gap: 2rem;
 }
 
-.cards > article {
+.cards > a {
+  cursor: pointer;
   transition: transform 0.2s;
 }
 
-.cards > article:hover {
+.cards > a:hover {
   transform: translateY(-10px);
 }
 

@@ -1,8 +1,9 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import { Card } from '../components/Card'
+import { CityCard } from '../components/CityCard'
 
 import styles from '../styles/Cities.module.css'
 
@@ -53,14 +54,14 @@ export default function CitiesListing({ cities }: CitiesListingProps) {
           <Logo />
 
           <div className={styles.inputContainer}>
-            <FiSearch size={18} color={search ? '#F25D27' : '#617480'}/>
+            <FiSearch size={18} color={search ? '#F25D27' : '#617480'} />
             <input
               type="text"
               placeholder="Qual cidade você procura?"
               value={search}
               onChange={event => setSearch(event.target.value)}
             />
-            {search && <FiX size={18} onClick={handleClearSearch}/>}
+            {search && <FiX size={18} onClick={handleClearSearch} />}
           </div>
 
           <RestrictedAccess />
@@ -79,13 +80,16 @@ export default function CitiesListing({ cities }: CitiesListingProps) {
 
               <section className={styles.cards}>
                 {cities.map(city => (
-                  <Card
-                    key={city.id}
-                    city={city.name}
-                    imageUrl={city.imageUrl}
-                    locations={city.locations}
-                    disabled={!filteredCityIds.includes(city.id)}
-                  />
+                  <Link href={`/city/${city.id}`} key={city.id}>
+                    <a>
+                      <CityCard
+                        city={city.name}
+                        imageUrl={city.imageUrl}
+                        locations={city.locations}
+                        disabled={!filteredCityIds.includes(city.id)}
+                      />
+                    </a>
+                  </Link>
                 ))}
               </section>
             </main>

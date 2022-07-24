@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { Card } from '../components/Card'
+import { CityCard } from '../components/CityCard'
 import { Logo } from '../components/Logo'
 import { RestrictedAccess } from '../components/RestrictedAccess'
 
@@ -56,7 +56,7 @@ export default function Home() {
           <section className={styles.places}>
             <div className={styles.col}>
               {cities.slice(0,4).map(city => (
-                <Card
+                <CityCard
                   key={city.id}
                   city={city.name}
                   imageUrl={city.imageUrl}
@@ -67,7 +67,7 @@ export default function Home() {
 
             <div className={styles.col}>
               {cities.slice(3,5).map(city => (
-                <Card
+                <CityCard
                   key={city.id}
                   city={city.name}
                   imageUrl={city.imageUrl}
